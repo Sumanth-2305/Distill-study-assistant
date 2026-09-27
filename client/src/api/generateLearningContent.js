@@ -1,5 +1,7 @@
-const API_URL = "http://localhost:8000/api/generate";
-const REQUEST_TIMEOUT_MS = 30000;
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+console.log(API_BASE_URL)
+const API_URL = `${API_BASE_URL}/api/generate`;
+const REQUEST_TIMEOUT_MS = 60000;
 
 /**
  * The only fetch() call in the app. Never throws — always resolves to either

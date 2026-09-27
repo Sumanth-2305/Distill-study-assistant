@@ -178,8 +178,8 @@ def generate_learning_content(user_input: str) -> dict:
                 max_output_tokens=4096,
             ),
         )
-    except Exception as exc:  # noqa: BLE001 - any SDK/network failure becomes a safe error
-        raise GeminiServiceError("Unable to reach the AI service right now.") from exc
+    except Exception as exc:  # any SDK/network failure becomes a safe error
+        raise GeminiServiceError("The AI service is temporarily busy. Please try again in a moment") from exc
 
     raw_text = (response.text or "").strip()
     if not raw_text:

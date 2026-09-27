@@ -161,7 +161,12 @@ server/.env
 GEMINI_API_KEY=your-key-here
 ```
 
-(`server/.env.example` shows the expected shape.)
+```
+client/.env
+VITE_API_URL=http://localhost:8000
+```
+
+`server/.env.example` and `client/.env.example` show the expected shape for each. The client only needs the backend's base URL (no `/api/...` suffix) — it's read via `import.meta.env.VITE_API_URL` in `api/generateLearningContent.js`, with `http://localhost:8000` as a fallback if the variable isn't set. Change it if your backend runs on a different host/port.
 
 ### Run the backend
 

@@ -12,9 +12,6 @@ import { useGenerateLearningContent } from "./hooks/useGenerateLearningContent";
 function App() {
   const { status, aiData, errorMessage, generate, retry } = useGenerateLearningContent();
 
-  // Navigation state is kept separate from the AI request state (status/aiData/
-  // errorMessage, owned by the hook). Each navigation action sets these
-  // explicitly, so rendering never needs to "sync" from one to the other.
   const [showInput, setShowInput] = useState(true);
   const [screen, setScreen] = useState("choice"); // 'choice' | 'summary' | 'quiz'
   const [viewingPreviousResult, setViewingPreviousResult] = useState(false);
@@ -33,10 +30,7 @@ function App() {
 
   let content;
 
-  // `showInput` is checked first so "New Topic" always escapes whatever the
-  // request state is doing (including a lingering error), and `handleGenerate`
-  // always flips it back to false before a request starts, so it never
-  // shadows the loading/success/error states of an in-flight request.
+ 
   if (showInput) {
     content = <HomeInput onSubmit={handleGenerate} />;
   } else if (status === "loading") {
