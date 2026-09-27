@@ -9,7 +9,7 @@ app = FastAPI(title="Distill API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173","https://client-five-sand-86.vercel.app/"],
+    allow_origins=["http://localhost:5173","https://client-five-sand-86.vercel.app"],
     allow_methods=["POST"],
     allow_headers=["Content-Type"],
 )
