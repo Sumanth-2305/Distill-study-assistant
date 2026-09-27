@@ -1,0 +1,85 @@
+/* Shared animation vocabulary — every component builds its motion from these
+   instead of one-off per-file keyframes. */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-12px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(160px) rotate(320deg);
+    opacity: 0;
+  }
+}
+
+@keyframes gentle-shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(3%, -4%) scale(1.05);
+  }
+}
+
+/* Entrance utility: fades/slides an element up on mount. Pair with an inline
+   `style={{ '--enter-delay': '80ms' }}` to stagger a list of siblings. */
+.enter-fade-up {
+  --enter-delay: 0ms;
+  animation: fade-in-up var(--duration-slow) var(--ease-out) both;
+  animation-delay: var(--enter-delay);
+}

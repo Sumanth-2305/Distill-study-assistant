@@ -1,0 +1,103 @@
+.home-input {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  isolation: isolate;
+}
+
+.home-input__glow {
+  position: absolute;
+  inset: -120px -80px auto -80px;
+  height: 320px;
+  background: radial-gradient(closest-side, rgba(109, 40, 217, 0.22), transparent 70%),
+    radial-gradient(closest-side, rgba(236, 72, 153, 0.16), transparent 70%);
+  background-position: 20% 30%, 80% 20%;
+  background-repeat: no-repeat;
+  background-size: 60% 100%, 55% 100%;
+  filter: blur(10px);
+  animation: drift 12s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.home-input__intro {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.home-input__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.home-input__intro h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.03em;
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-input__intro p {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.home-input__form {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.home-input__textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 160px;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.home-input__textarea:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-primary) 18%, transparent);
+  outline: none;
+}
+
+.home-input__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 480px) {
+  .home-input__actions {
+    justify-content: stretch;
+  }
+
+  .home-input__actions .btn {
+    width: 100%;
+  }
+}

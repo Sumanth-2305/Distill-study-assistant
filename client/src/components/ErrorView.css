@@ -1,0 +1,35 @@
+.error-view {
+  margin: auto;
+  width: 100%;
+  max-width: 480px;
+}
+
+.error-view__card {
+  padding: var(--space-6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  border-color: var(--color-error-border);
+  animation: fade-in-up var(--duration-base) var(--ease-out) both;
+}
+
+.error-view__icon {
+  font-size: var(--font-size-2xl);
+  color: var(--color-error);
+  display: inline-block;
+  animation: gentle-shake 0.5s var(--ease-out) 0.2s both;
+}
+
+.error-view__card p {
+  color: var(--color-text-secondary);
+}
+
+.error-view__actions {
+  margin-top: var(--space-2);
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}

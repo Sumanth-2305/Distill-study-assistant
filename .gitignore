@@ -1,0 +1,27 @@
+# Node
+client/node_modules
+client/dist
+client/dist-ssr
+*.local
+
+# Python
+server/.venv
+server/venv
+server/__pycache__
+**/__pycache__
+*.pyc
+
+# Secrets
+server/.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Editors / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db

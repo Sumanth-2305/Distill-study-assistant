@@ -1,0 +1,20 @@
+.boundary-fallback {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+}
+
+.boundary-fallback__card {
+  max-width: 420px;
+  padding: var(--space-6);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.boundary-fallback__card p {
+  color: var(--color-text-secondary);
+}
